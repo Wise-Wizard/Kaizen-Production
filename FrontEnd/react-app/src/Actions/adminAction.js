@@ -24,7 +24,10 @@ export const getUsersList = () => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.get(`http://api-kaizen.ap-south-1.elasticbeanstalk.com/api/users`, config);
+    const { data } = await axios.get(
+      `https://kaizen-backend-ov33.onrender.com/api/users`,
+      config
+    );
     dispatch({ type: ADMIN_USERS_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: ADMIN_USERS_FAILURE, payload: error.message });
@@ -43,9 +46,15 @@ export const deleteUser = (id) => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    await axios.delete(`http://api-kaizen.ap-south-1.elasticbeanstalk.com/api/users/${id}`, config);
+    await axios.delete(
+      `https://kaizen-backend-ov33.onrender.com/api/users/${id}`,
+      config
+    );
 
-    const { data } = await axios.get(`http://api-kaizen.ap-south-1.elasticbeanstalk.com/api/users`, config);
+    const { data } = await axios.get(
+      `https://kaizen-backend-ov33.onrender.com/api/users`,
+      config
+    );
     dispatch({ type: ADMIN_USERS_DELETE_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: ADMIN_USERS_DELETE_FAILURE, payload: error.message });
@@ -66,7 +75,7 @@ export const getOrdersList = () => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      `http://api-kaizen.ap-south-1.elasticbeanstalk.com/api/orders`,
+      `https://kaizen-backend-ov33.onrender.com/api/orders`,
       config
     );
     dispatch({ type: ADMIN_ORDERS_SUCCESS, payload: data });

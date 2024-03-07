@@ -4,7 +4,7 @@ const productDetailsAction = (id) => async (dispatch) => {
   try {
     dispatch({ type: "PRODUCT_DETAILS_REQUEST" });
     const { data } = await axios.get(
-      `http://api-kaizen.ap-south-1.elasticbeanstalk.com/api/products/${id}`
+      `https://kaizen-backend-ov33.onrender.com/api/products/${id}`
     );
     console.log(data.image.url);
     dispatch({ type: "PRODUCT_DETAILS_SUCCESS", payload: data });

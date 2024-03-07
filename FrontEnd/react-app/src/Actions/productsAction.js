@@ -12,7 +12,9 @@ import {
 const productListAction = () => async (dispatch) => {
   try {
     dispatch({ type: "PRODUCT_LIST_REQUEST" });
-    const { data } = await axios.get("http://api-kaizen.ap-south-1.elasticbeanstalk.com/api/products");
+    const { data } = await axios.get(
+      "https://kaizen-backend-ov33.onrender.com/api/products"
+    );
     dispatch({ type: "PRODUCT_LIST_SUCCESS", payload: data });
   } catch (error) {
     console.log(error);
@@ -33,7 +35,7 @@ export const createProduct = (newProductData) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.post(
-      "http://api-kaizen.ap-south-1.elasticbeanstalk.com/api/products",
+      "https://kaizen-backend-ov33.onrender.com/api/products",
       newProductData,
       config
     );
@@ -56,10 +58,13 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    await axios.delete(`http://api-kaizen.ap-south-1.elasticbeanstalk.com/api/products/${id}`, config);
+    await axios.delete(
+      `https://kaizen-backend-ov33.onrender.com/api/products/${id}`,
+      config
+    );
 
     const { data } = await axios.get(
-      `http://api-kaizen.ap-south-1.elasticbeanstalk.com/api/products`,
+      `https://kaizen-backend-ov33.onrender.com/api/products`,
       config
     );
     dispatch({ type: ADMIN_PRODUCT_DELETE_SUCCESS, payload: data });
@@ -82,12 +87,12 @@ export const updateProduct =
         },
       };
       await axios.put(
-        `http://api-kaizen.ap-south-1.elasticbeanstalk.com/api/products/${id}`,
+        `https://kaizen-backend-ov33.onrender.com/api/products/${id}`,
         updatedProductData,
         config
       );
       const { data } = await axios.get(
-        `http://api-kaizen.ap-south-1.elasticbeanstalk.com/api/products`,
+        `https://kaizen-backend-ov33.onrender.com/api/products`,
         config
       );
       dispatch({ type: ADMIN_PRODUCT_DELETE_SUCCESS, payload: data });

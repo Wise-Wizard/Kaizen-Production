@@ -23,7 +23,7 @@ export const getFavourites = () => async (dispatch, getstate) => {
       },
     };
     const { data } = await axios.get(
-      `http://api-kaizen.ap-south-1.elasticbeanstalk.com/api/users/favourites`,
+      `https://kaizen-backend-ov33.onrender.com/api/users/favourites`,
       config
     );
     localStorage.setItem("userFav", JSON.stringify(data));
@@ -49,12 +49,12 @@ export const addFavorite = (id) => async (dispatch, getState) => {
     };
 
     await axios.post(
-      `http://api-kaizen.ap-south-1.elasticbeanstalk.com/api/users/favourites/${id}`,
+      `https://kaizen-backend-ov33.onrender.com/api/users/favourites/${id}`,
       {},
       config
     );
     const { data } = await axios.get(
-      `http://api-kaizen.ap-south-1.elasticbeanstalk.com/api/users/favourites`,
+      `https://kaizen-backend-ov33.onrender.com/api/users/favourites`,
       config
     );
     dispatch({ type: USER_ADD_FAVORITE_SUCCESS, payload: data });
@@ -81,12 +81,12 @@ export const deleteFavourite = (id) => async (dispatch, getState) => {
     };
 
     await axios.delete(
-      `http://api-kaizen.ap-south-1.elasticbeanstalk.com/api/users/favourites/${id}`,
+      `https://kaizen-backend-ov33.onrender.com/api/users/favourites/${id}`,
       config
     );
 
     const { data } = await axios.get(
-      `http://api-kaizen.ap-south-1.elasticbeanstalk.com/api/users/favourites`,
+      `https://kaizen-backend-ov33.onrender.com/api/users/favourites`,
       config
     );
     dispatch({ type: USER_DELETE_FAVORITE_SUCCESS, payload: data });
