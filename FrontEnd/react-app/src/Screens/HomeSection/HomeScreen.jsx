@@ -88,7 +88,7 @@ function Home() {
             <h2 className="welcome-heading">
               Anime Posters
               <h5 className={styles.category_link}>
-                <a href="/product/bracelets">See All Collection</a>
+                <a href="/product/posters">See All Collection</a>
                 <ArrowForwardIcon
                   fontSize="small"
                   style={{ marginLeft: "4px", verticalAlign: "baseline" }}
