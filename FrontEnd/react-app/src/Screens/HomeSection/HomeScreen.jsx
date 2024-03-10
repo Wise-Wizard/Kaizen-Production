@@ -35,29 +35,30 @@ function Home() {
           <div className={styles.button_Navbar}>
             <button
               className={styles.nav_Button}
-              onClick={() => Navigate("/product/totebags")}
+              onClick={() => Navigate("/product/tshirts")}
             >
-              Tote Bags &nbsp;
+              T-Shirts &nbsp;
               <ShoppingBagIcon fontSize="large" />
             </button>
             <button
               className={styles.nav_Button}
-              onClick={() => Navigate("/product/bracelets")}
+              onClick={() => Navigate("/product/posters")}
             >
-              Bracelets &nbsp;
+              Posters &nbsp;
               <LinkIcon fontSize="large" />
             </button>
           </div>{" "}
           <ImageScrollAnimation
+            style={{ height: "100px", width: "100px" }}
             imageUrl={
-              "https://cdn.pixabay.com/photo/2023/05/19/18/07/bee-8005091_1280.jpg"
+              "https://res.cloudinary.com/dzyevjbmh/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709970436/Kaizen/IMG_5017_z0afbx.jpg?_s=public-apps"
             }
           />
-          <div className="bag_Section">
+          <div className="tshirt_Section">
             <h2 className="welcome-heading">
-              Tote Bags
+              Anime T-Shirts
               <h5 className={styles.category_link}>
-                <a href="/product/totebags">See All Collection</a>
+                <a href="/product/tshirts">See All Collection</a>
                 <ArrowForwardIcon
                   fontSize="small"
                   style={{ marginLeft: "4px", verticalAlign: "baseline" }}
@@ -67,25 +68,25 @@ function Home() {
             {isMobile ? (
               <MultiGridCarousel
                 products={products.filter(
-                  (product) => product.category === "Tote Bag"
+                  (product) => product.category === "T-Shirt"
                 )}
               />
             ) : (
               <DesktopCarousel
                 products={products.filter(
-                  (product) => product.category === "Tote Bag"
+                  (product) => product.category === "T-Shirt"
                 )}
               />
             )}
           </div>
           <ImageScrollAnimation
             imageUrl={
-              "https://cdn.pixabay.com/photo/2023/05/27/12/20/eastern-spinebill-8021395_1280.jpg"
+              "https://res.cloudinary.com/dzyevjbmh/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710004535/Kaizen/IMG_4978_tts5yy.jpg?_s=public-apps"
             }
           />
-          <div className="bracelet_Section">
+          <div className="poster_Section">
             <h2 className="welcome-heading">
-              Bracelets
+              Anime Posters
               <h5 className={styles.category_link}>
                 <a href="/product/bracelets">See All Collection</a>
                 <ArrowForwardIcon
@@ -97,13 +98,13 @@ function Home() {
             {isMobile ? (
               <MultiGridCarousel
                 products={products.filter(
-                  (product) => product.category === "Bracelet"
+                  (product) => product.category === "Poster"
                 )}
               />
             ) : (
               <DesktopCarousel
                 products={products.filter(
-                  (product) => product.category === "Bracelet"
+                  (product) => product.category === "Poster"
                 )}
               />
             )}

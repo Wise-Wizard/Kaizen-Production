@@ -8,10 +8,10 @@ import productListAction from "../../Actions/productsAction";
 import { useMediaQuery } from "react-responsive";
 import MultiGridCarousel from "../../Components/HomeComponents/Caraousel";
 
-function BraceletScreen() {
+function TShirtScreen() {
   const dispatch = useDispatch();
-  const braceletList = useSelector((state) => state.productList);
-  const { loading, error, products } = braceletList;
+  const tShirtList = useSelector((state) => state.productList);
+  const { loading, error, products } = tShirtList;
 
   useEffect(() => {
     dispatch(productListAction());
@@ -28,14 +28,14 @@ function BraceletScreen() {
         <Error variant="danger" children={error} />
       ) : (
         <>
-          <h1 className="welcome-heading">Bracelets</h1>
+          <h1 className="welcome-heading">T-Shirts</h1>
           {isMobile ? (
             <Row>
               <Col md={12}>
                 {/* Render the carousel for mobile view */}
                 <MultiGridCarousel
                   products={products.filter(
-                    (product) => product.category === "Bracelet"
+                    (product) => product.category === "T-Shirt"
                   )}
                 />
               </Col>
@@ -43,7 +43,7 @@ function BraceletScreen() {
           ) : (
             <Row>
               {products
-                .filter((product) => product.category === "Bracelet")
+                .filter((product) => product.category === "T-Shirt")
                 .map((product) => (
                   <Col key={product._id} md={3}>
                     <ProductCard productDetails={product} />
@@ -57,4 +57,4 @@ function BraceletScreen() {
   );
 }
 
-export default BraceletScreen;
+export default TShirtScreen;

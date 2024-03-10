@@ -8,10 +8,10 @@ import productListAction from "../../Actions/productsAction";
 import { useMediaQuery } from "react-responsive";
 import MultiGridCarousel from "../../Components/HomeComponents/Caraousel";
 
-function ToteBagScreen() {
+function PosterScreen() {
   const dispatch = useDispatch();
-  const toteBagList = useSelector((state) => state.productList);
-  const { loading, error, products } = toteBagList;
+  const posterList = useSelector((state) => state.productList);
+  const { loading, error, products } = posterList;
 
   useEffect(() => {
     dispatch(productListAction());
@@ -28,14 +28,14 @@ function ToteBagScreen() {
         <Error variant="danger" children={error} />
       ) : (
         <>
-          <h1 className="welcome-heading">Tote Bags</h1>
+          <h1 className="welcome-heading">Posters</h1>
           {isMobile ? (
             <Row>
               <Col md={12}>
                 {/* Render the carousel for mobile view */}
                 <MultiGridCarousel
                   products={products.filter(
-                    (product) => product.category === "Tote Bag"
+                    (product) => product.category === "Poster"
                   )}
                 />
               </Col>
@@ -43,7 +43,7 @@ function ToteBagScreen() {
           ) : (
             <Row>
               {products
-                .filter((product) => product.category === "Tote Bag")
+                .filter((product) => product.category === "Poster")
                 .map((product) => (
                   <Col key={product._id} md={3}>
                     <ProductCard productDetails={product} />
@@ -57,4 +57,4 @@ function ToteBagScreen() {
   );
 }
 
-export default ToteBagScreen;
+export default PosterScreen;

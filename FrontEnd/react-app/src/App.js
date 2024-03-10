@@ -11,8 +11,8 @@ import ProfileScreen from "./Screens/ProfileSection/ProfileScreen.jsx";
 import ShippingScreen from "./Screens/CartSection/ShippingScreen.jsx";
 import Payment from "./Screens/PaymentSection/PaymentScreen.jsx";
 import PlaceOrderScreen from "./Screens/PaymentSection/PlaceOrderScreen.jsx";
-import ToteBagScreen from "./Screens/CategoriesSection/ToteBagScreen.jsx";
-import BraceletScreen from "./Screens/CategoriesSection/BraceletScreen.jsx";
+import PosterScreen from "./Screens/CategoriesSection/PosterScreen.jsx";
+import TShirtScreen from "./Screens/CategoriesSection/TShirtScreen.jsx";
 import FavouritesScreen from "./Screens/HomeSection/FavouritesScreen.jsx";
 import OrderListScreen from "./Screens/AdminSection/OrderListScreen.jsx";
 import ProductListScreen from "./Screens/AdminSection/ProductListScreen.jsx";
@@ -38,12 +38,8 @@ function App() {
             <Route path="/profile" element={<ProfileScreen />} exact />
             <Route path="/favourites" element={<FavouritesScreen />} exact />
             <Route path="/product/:id" element={<ProductPage />} exact />
-            <Route path="/product/totebags" element={<ToteBagScreen />} exact />
-            <Route
-              path="/product/bracelets"
-              element={<BraceletScreen />}
-              exact
-            />
+            <Route path="/product/posters" element={<PosterScreen />} exact />
+            <Route path="/product/tshirts" element={<TShirtScreen />} exact />
             <Route path="/cart/:id?" element={<Cart />} exact />
             <Route path="/shipping" element={<ShippingScreen />} exact />
             <Route path="/payment" element={<Payment />} exact />
