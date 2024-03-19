@@ -62,33 +62,6 @@
 }
 /* Button CSS */
 
-/* Main Image */
-.main_Image {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  width: 100vh;
-  height: 100vh;
-  margin: 30px auto;
-  animation: slideIn 1.5s cubic-bezier(0.42, 0, 0.58, 1) both;
-  animation-play-state: paused; /* Pause the animation by default */
-}
-
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  50% {
-    opacity: 1;
-    transform: translateX(10%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-
 .category_link {
   vertical-align: baseline;
   margin-left: 12px;
@@ -96,10 +69,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .main_Image {
-    width: auto;
-    height: auto;
-  }
   .nav_Button {
     padding: 5px 5px;
     margin: 0px 5px;

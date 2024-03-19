@@ -8,10 +8,10 @@ import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import LinkIcon from "@mui/icons-material/Link";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import MultiGridCarousel from "../../Components/HomeComponents/Caraousel";
-import ImageScrollAnimation from "../../Components/HomeComponents/ImageComponent";
 import { useNavigate } from "react-router-dom";
 import DesktopCarousel from "../../Components/HomeComponents/DesktopCaraosel";
 import { useMediaQuery } from "react-responsive";
+import ModelCarousel from "../../Components/HomeComponents/ModelCarousel";
 
 function Home() {
   const dispatch = useDispatch();
@@ -48,13 +48,8 @@ function Home() {
               <LinkIcon fontSize="large" />
             </button>
           </div>{" "}
-          <ImageScrollAnimation
-            style={{ height: "100px", width: "100px" }}
-            imageUrl={
-              "https://res.cloudinary.com/dzyevjbmh/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709970436/Kaizen/IMG_5017_z0afbx.jpg?_s=public-apps"
-            }
-          />
           <div className="tshirt_Section">
+            <ModelCarousel />
             <h2 className="welcome-heading">
               Anime T-Shirts
               <h5 className={styles.category_link}>
@@ -79,11 +74,7 @@ function Home() {
               />
             )}
           </div>
-          <ImageScrollAnimation
-            imageUrl={
-              "https://res.cloudinary.com/dzyevjbmh/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710004535/Kaizen/IMG_4978_tts5yy.jpg?_s=public-apps"
-            }
-          />
+          <ModelCarousel />
           <div className="poster_Section">
             <h2 className="welcome-heading">
               Anime Posters
