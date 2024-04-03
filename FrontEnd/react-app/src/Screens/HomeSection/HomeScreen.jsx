@@ -74,9 +74,6 @@ function Home() {
               />
             )}
           </div>
-          <br>
-            <br></br>
-          </br>
           <div className="poster_Section">
             <h2 className="welcome-heading">
               Anime Posters
