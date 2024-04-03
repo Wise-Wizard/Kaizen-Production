@@ -74,7 +74,9 @@ function Home() {
               />
             )}
           </div>
-          <ModelCarousel />
+          <br>
+            <br></br>
+          </br>
           <div className="poster_Section">
             <h2 className="welcome-heading">
               Anime Posters
